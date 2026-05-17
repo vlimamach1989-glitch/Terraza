@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terranza</title>
+    
+    <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones rústicos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Tela de Introdução (Preloader) -->
+    <div id="preloader">
+        <div class="preloader-conteudo">
+            <i class="fa-solid fa-scissors tesoura-animacao"></i>
+            <h1 class="preloader-logo">Terrazza</h1>
+            <h1 class="preloader-subtitulo">Barber Shop</h1>
+            <p class="preloader-slogan">Um Novo Conceito</p>   
+        </div>
+    </div>
+
+    <!-- 2. Cabeçalho / Menu de Navegação -->
+    <header>
+        <img src="img/logoTerazza.png" alt="Terranza" class="logo-img">
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#galeria">Estilos</a>
+            <a href="#barbeiros">Barbeiros</a>
+            <a href="#contatos">Contatos</a>
+            <a href="https://sites.appbarber.com.br/TerrazzaBarberShopp?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAR2reBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadpq1SL6H-AYDTK7CmD0HTihmGprkiI7F1E87IGQYU8YFIxCDFRo59BxiEW8w_aem_cICkZL1ZEs2uo2X0mKAj1w" class="btn-header">Marcar Horário</a>
+        </nav>
+    </header>
+
+    <!-- 3. Banner Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <h2>BEM-VINDOoooo</h2>
+        <h1>Terrazza Barber Shop</h1>
+        
+        <!-- Frase de Efeito Marcante -->
+        <p class="frase-efeito">
+            " Mais que um Corte, Experiencia que você merece" <br>
+            – O estilo é a resposta para tudo..
+        </p>
+        
+        <!-- Link de Integração do AppBarber -->
+        <a href="https://sites.appbarber.com.br/TerrazzaBarberShopp?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAR2reBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadpq1SL6H-AYDTK7CmD0HTihmGprkiI7F1E87IGQYU8YFIxCDFRo59BxiEW8w_aem_cICkZL1ZEs2uo2X0mKAj1w" target="_blank" class="btn-principal">
+            <i class="fa-regular fa-calendar-check"></i> Agendar via AppBarber
+        </a>
+    </section>
+
+    <!-- 4. Secção de Serviços -->
+    <section id="servicos" class="secao">
+        <div class="titulo-secao">
+            <h2>Nossos Serviços</h2>
+            <p>Tratamentos especializados para o homem moderno</p>
+        </div>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <i class="fa-solid fa-scissors servico-icone"></i>
+                <h3>Corte Clássico e Modernos</h3>
+                <p>Mais que um corte, uma assinatura de estilo. Precisão, elegância e modernidade em cada detalhe para destacar sua presença com confiança.</p>
+            </div>
+            <div class="servico-card">
+                <i class="fa-solid fa-soap servico-icone"></i>
+                <h3>Barbaterapia Rexalante</h3>
+                <p>Barba tradicional executada com toalha quente, espuma rica, massagem facial e óleos de hidratação profundas.</p>
+            </div>
+            <div class="servico-card">
+                <i class="fa-solid fa-whiskey-glass servico-icone"></i>
+                <h3>Atendimento Vip</h3>
+                <p>O ritual completo com corte de cabelo, barba, cuidado de pele e uma bebida de cortesia do nosso bar premium.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Secção Galeria de Estilos (Carrosséis Lado a Lado - Cortes, Barba, Química, Espaço) -->
+    <section id="galeria" class="secao">
+        <div class="titulo-secao">
+            <h2>Um Pouco de Nós</h2>
+            <p>Clique nas setas ou veja a transição automática de cada categoria</p>
+        </div>
+        
+        <div class="galeria-grid">
+            
+            <!-- CARD 1: CORTES -->
+            <div class="galeria-item" data-carousel="carousel-cortes">
+                <div class="carrossel-slides">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600" class="slide active" alt="Corte Clássico">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=600" class="slide" alt="Corte Degradê Perfeito">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600" class="slide" alt="Modern Styling">
+                </div>
+                <div class="galeria-overlay">
+                    <h4>Cortes</h4>
+                    <p>Do clássico ao fade moderno</p>
+                </div>
+                <button class="carrossel-btn prev" onclick="mudarSlide('carousel-cortes', -1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="carrossel-btn next" onclick="mudarSlide('carousel-cortes', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- CARD 2: BARBA -->
+            <div class="galeria-item" data-carousel="carousel-barba">
+                <div class="carrossel-slides">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600" class="slide active" alt="Barboterapia com Toalha Quente">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600" class="slide" alt="Desenho Alinhado">
+                    <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&q=80&w=600" class="slide" alt="Hidratação e Navalha">
+                </div>
+                <div class="galeria-overlay">
+                    <h4>Barba</h4>
+                    <p>Tratamento com toalha quente</p>
+                </div>
+                <button class="carrossel-btn prev" onclick="mudarSlide('carousel-barba', -1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="carrossel-btn next" onclick="mudarSlide('carousel-barba', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- CARD 3: Estilo e Freestyle -->
+            <div class="galeria-item" data-carousel="carousel-quimica">
+                <div class="carrossel-slides">
+                    <img src="img/1f.png" class="slide  imagem-card" alt="aaa">
+                    <img src="img/1a.png" class="slide  imagem-card" alt="bbb">
+                    <img src="img/1b.png" class="slide  imagem-card" alt="vvv">
+                    <img src="img/1c.png" class="slide  imagem-card" alt="vvv">
+                    <img src="img/1d.png" class="slide  imagem-card" alt="vvv">
+                    <img src="img/1e.png" class="slide  imagem-card" alt="ddd">
+                </div>
+                <div class="galeria-overlay">
+                    <h4>Estilo e Freestyle</h4>
+                    <p>Platinado, selagem e tintura</p>
+                </div>
+                <button class="carrossel-btn prev" onclick="mudarSlide('carousel-quimica', -1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="carrossel-btn next" onclick="mudarSlide('carousel-quimica', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- CARD 4: ESPAÇO -->
+            <div class="galeria-item" data-carousel="carousel-espaco">
+                <div class="carrossel-slides" id="carousel-espaco">
+                    <img src="img/barbeariaR1.jpg" class="slide active imagem-card" alt="bbb">
+                    <img src="img/barbeariaR12.jpg" class="slide  imagem-card" alt="vvv">
+                    <img src="img/barbeariaR3.jpg" class="slide  imagem-card" alt="vvv">
+                 </div>
+                <div class="galeria-overlay">
+                    <h4>Nosso Espaço</h4>
+                    <p>Ambiente sofisticado e Divertido Pronto para te Receber</p>
+                </div>
+                <button class="carrossel-btn prev" onclick="mudarSlide('carousel-espaco', -1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="carrossel-btn next" onclick="mudarSlide('carousel-espaco', 1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. Secção de Barbeiros (Equipa) -->
+    <section id="barbeiros" class="secao">
+        <div class="titulo-secao">
+            <h2>Equipa Terraza</h2>
+            <p>Os mestres responsáveis pelo seu próximo visual (Passe o rato ou toque para expandir)</p>
+        </div>
+        
+        <div class="barbeiros-container">
+            <!-- BARBEIRO 1 -->
+            <div class="barbeiro-card">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" class="barbeiro-img-bg" alt="Tomás Silva - Barbeiro">
+                <div class="barbeiro-overlay">
+                    <h3>Tomás Silva</h3>
+                    <div class="barbeiro-detalhes">
+                        <span>Mestre Barbeiro</span>
+                        <p>Especialista em cortes clássicos e barboterapia tradicional. Mais de 10 anos dedicados à precisão da navalha rústica.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARBEIRO 2 -->
+            <div class="barbeiro-card">
+                <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?auto=format&fit=crop&q=80&w=600" class="barbeiro-img-bg" alt="Pedro Santos - Barbeiro">
+                <div class="barbeiro-overlay">
+                    <h3>Pedro Santos</h3>
+                    <div class="barbeiro-detalhes">
+                        <span>Estilista de Barba</span>
+                        <p>Conhecido pelos degradês e designs de barba cirúrgicos. Totalmente sintonizado com as tendências estéticas internacionais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARBEIRO 3 -->
+            <div class="barbeiro-card">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600" class="barbeiro-img-bg" alt="Lucas Ramos - Barbeiro">
+                <div class="barbeiro-overlay">
+                    <h3>Lucas Ramos</h3>
+                    <div class="barbeiro-detalhes">
+                        <span>Modern Hair Stylist</span>
+                        <p>Domina técnicas de texturização e visagismo. O profissional ideal para redesenhar a sua identidade visual.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARBEIRO 4 -->
+            <div class="barbeiro-card">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600" class="barbeiro-img-bg" alt="Gabriel Costa - Barbeiro">
+                <div class="barbeiro-overlay">
+                    <h3>Gabriel Costa</h3>
+                    <div class="barbeiro-detalhes">
+                        <span>Especialista em Química</span>
+                        <p>Referência técnica em platinados premium, pigmentação natural de barba e tratamentos profundos de reconstrução.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Área Especial de Marcações (AppBarber) -->
+    <section id="marcações" class="agendamento">
+        <div class="agendamento-container">
+            <i class="fa-solid fa-clock"></i>
+            <h2>Agende sem Complicação</h2>
+            <p>Evite esperas desnecessárias no sofá. Clique no botão abaixo para escolher o seu serviço, barbeiro preferido e agendar instantaneamente no nosso sistema oficial <strong>AppBarber</strong>.</p>
+            <a href="https://sites.appbarber.com.br/TerrazzaBarberShopp?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAR2reBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadpq1SL6H-AYDTK7CmD0HTihmGprkiI7F1E87IGQYU8YFIxCDFRo59BxiEW8w_aem_cICkZL1ZEs2uo2X0mKAj1w" target="_blank" class="btn-principal">
+                <i class="fa-regular fa-calendar-check"></i> Escolher Meu Horário
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-conteudo" id="contatos">
+            <div class="footer-coluna">
+                <h3>Terrazza Barber Shop</h3>
+                <p>Nossa missão é ir além do corte. Fornecemos uma experiência autêntica, rústica e sofisticada para o homem moderno.</p>
+                <div class="redes-sociais">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-coluna">
+                <h3>Contacto & Localização</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Avenida da Liberdade, 1024 - Centro</p>
+                <p><i class="fa-solid fa-phone"></i> +351 213 456 789</p>
+                <p><i class="fa-solid fa-envelope"></i> reservas@corleonebarber.pt</p>
+            </div>
+            <div class="footer-coluna">
+                <h3>Horário de Funcionamento</h3>
+                <p><i class="fa-regular fa-clock"></i> Terça a Sexta: 09:00h - 20:00h</p>
+                <p><i class="fa-regular fa-clock"></i> Sábado: 09:00h - 19:00h</p>
+                <p><i class="fa-regular fa-clock"></i> Domingo e Segunda: Fechado</p>
+            </div>
+        </div>
+        <div class="direitos">
+            <p>&copy; 2026 Nexus techinologi and Devolviment. Todos os direitos reservados. Desenvolvido para máxima sofisticação.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts do Site -->
+    <script>
+        // 1. Controlo da animação de entrada (Preloader)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.classList.add('ocultar-preloader');
+            }, 2200);
+        });
+
+        // 1.5 Lógica de Toque e Destaque para as Cartas de Barbeiros (Mobile Friendly)
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardsBarbeiros = document.querySelectorAll('.barbeiro-card');
+            
+            cardsBarbeiros.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Se a carta clicada já está expandida, fecha-a
+                    if (card.classList.contains('expandido')) {
+                        card.classList.remove('expandido');
+                    } else {
+                        // Fecha qualquer outra carta aberta
+                        cardsBarbeiros.forEach(c => c.classList.remove('expandido'));
+                        // Expande a carta atual
+                        card.classList.add('expandido');
+                    }
+                });
+            });
+        });
+
+        // 2. Lógica Independente de Carrossel para cada Coluna da Galeria
+        const carrosselEstados = {
+            'carousel-cortes': { index: 0 },
+            'carousel-barba': { index: 0 },
+            'carousel-quimica': { index: 0 },
+            'carousel-espaco': { index: 0 }
+        };
+
+        function mudarSlide(carouselId, direcao) {
+            const itemElemento = document.querySelector(`[data-carousel="${carouselId}"]`);
+            if (!itemElemento) return;
+
+            const slides = itemElemento.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            // Remove classe ativa do slide atual
+            slides[carrosselEstados[carouselId].index].classList.remove('active');
+
+            // Calcula o índice seguinte com loop cíclico
+            let novoIndex = carrosselEstados[carouselId].index + direcao;
+            if (novoIndex >= totalSlides) novoIndex = 0;
+            if (novoIndex < 0) novoIndex = totalSlides - 1;
+
+            // Define o novo índice ativo e adiciona a classe correspondente
+            carrosselEstados[carouselId].index = novoIndex;
+            slides[novoIndex].classList.add('active');
+        }
+
+        // 3. Transição Automática em Tempos Alternados (efeito fluído e dinâmico)
+        setInterval(() => mudarSlide('carousel-cortes', 1), 4000);   // Muda a cada 4.0 segundos
+        setInterval(() => mudarSlide('carousel-barba', 1), 4500);    // Muda a cada 4.5 segundos
+        setInterval(() => mudarSlide('carousel-quimica', 1), 5000);  // Muda a cada 5.0 segundos
+        setInterval(() => mudarSlide('carousel-espaco', 1), 5500);   // Muda a cada 5.5 segundos
+    </script>
+</body>
+</html>
