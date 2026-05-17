@@ -1,0 +1,800 @@
+   /* Variáveis de Design - Tons Rústicos de Couro, Madeira e Ouro Velho */
+        :root {
+            --cor-preto: #0c0c0c;
+            --cor-cinza-escuro: #141414;
+            --cor-cinza-medio: #1f1f1f;
+            --cor-ouro: #c5a880;
+            --cor-ouro-brilhante: #e5c79e;
+            --cor-texto: #e0e0e0;
+            --cor-subtexto: #999999;
+            --cor-logo: #D89A2B;
+            --cor-logo2: #C6851A;
+        }
+
+        /* Reset Geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-preto);
+            color: var(--cor-texto);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Scrollbar Personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cor-preto);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--cor-ouro);
+            border-radius: 4px;
+        }
+        
+.logo-img{
+    width: 150px;
+    height: auto;
+}
+        /* 1. Tela de Introdução (Preloader) */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--cor-preto);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .preloader-conteudo {
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: surgirPreloader 1.5s forwards ease-out;
+        }
+
+        .preloader-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--cor-logo);
+            letter-spacing: 6px;
+            font-weight: 900;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+        .preloader-subtitulo {
+             font-family: 'Grenze Gotisch', serif;
+             font-size: 1.5rem;
+             color: var(--cor-logo);
+             letter-spacing: 6px;
+             font-weight: 900;
+             margin-top: 8px;
+             text-transform: uppercase;
+}
+
+      .preloader-slogan{
+    font-family: 'Pirata One', system-ui;
+    font-size: 2rem;
+    color: #caa64b;
+    letter-spacing: 4px;
+    margin-top: 10px;
+
+    opacity: 0;
+
+    animation: surgirDourado 3s ease forwards,
+               fogoDourado 1.5s infinite alternate;
+}
+
+/* Crescendo e aparecendo */
+@keyframes surgirDourado{
+
+    0%{
+        opacity: 0;
+        transform: scale(0.2);
+        color: #3a2a00;
+
+        text-shadow:
+        0 0 0px #000;
+    }
+
+    50%{
+        opacity: 1;
+        transform: scale(1.3);
+
+        color: #ffcc33;
+
+        text-shadow:
+        0 0 10px #ffcc33,
+        0 0 20px #ff9900,
+        0 0 40px #ff6600;
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1);
+
+        color: #d4af37;
+
+        text-shadow:
+        0 0 5px #ffcc33,
+        0 0 15px #ff9900,
+        0 0 30px #ff6600;
+    }
+}
+
+/* Efeito flamejante infinito */
+@keyframes fogoDourado{
+
+    from{
+        text-shadow:
+        0 0 5px #ffcc33,
+        0 0 15px #ff9900,
+        0 0 25px #ff6600;
+    }
+
+    to{
+        text-shadow:
+        0 0 10px #ffd700,
+        0 0 25px #ffae00,
+        0 0 45px #ff5500;
+    }
+}
+
+        .tesoura-animacao {
+            font-size: 4rem;
+            color: var(--cor-ouro);
+            animation: rodarTesoura 2s infinite ease-in-out;
+        }
+
+        @keyframes surgirPreloader {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rodarTesoura {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .ocultar-preloader {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* 2. Menu de Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(12, 12, 12, 0.95);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--cor-logo);
+            letter-spacing: 3px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--cor-ouro);
+        }
+
+        .btn-header {
+            background-color: transparent;
+            border: 1px solid var(--cor-ouro);
+            color: var(--cor-ouro);
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-header:hover {
+            background-color: var(--cor-ouro);
+            color: var(--cor-preto);
+        }
+
+        /* 3. Hero Section (Banner) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(12, 12, 12, 0.8), rgba(12, 12, 12, 1)), 
+                        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Cinzel', serif;
+            color: white;
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: var(--cor-logo);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        /* Frase de Efeito Principal */
+        .frase-efeito {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: white;
+            margin-bottom: 40px;
+            max-width: 700px;
+            line-height: 1.6;
+            border-left: 3px solid var(--cor-ouro);
+            padding-left: 20px;
+        }
+
+        .btn-principal {
+            background-color: var(--cor-ouro);
+            color: var(--cor-preto);
+            padding: 18px 45px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(197, 168, 128, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-principal:hover {
+            background-color: var(--cor-ouro-brilhante);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(197, 168, 128, 0.5);
+        }
+
+        /* Seções Estruturadas */
+        .secao {
+            padding: 100px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Reduz o espaço superior especificamente na transição do Banner para os Serviços */
+        #servicos {
+            padding-top: 40px;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .titulo-secao h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--cor-logo);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .titulo-secao p {
+            color: var(--cor-logo2);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* 4. Secção de Serviços */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background-color: var(--cor-cinza-escuro);
+            padding: 40px 30px;
+            border-radius: 4px;
+            border: 1px solid rgba(197, 168, 128, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .servico-card:hover {
+            border-color: var(--cor-logo);
+            transform: translateY(-5px);
+            background-color: var(--cor-cinza-medio);
+        }
+
+        .servico-icone {
+            font-size: 2.5rem;
+            color: var(--cor-logo);
+            margin-bottom: 20px;
+        }
+
+        .servico-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .servico-card p {
+            color: var(--cor-subtexto);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* 5. Nova Secção Galeria de Estilos (4 Colunas com Carrosséis Independentes) */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            height: 450px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            background-color: var(--cor-cinza-escuro);
+        }
+
+        /* Contentores dos Slides */
+        .carrossel-slides {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+            transform: scale(1.02);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Overlays Elegantes */
+        .galeria-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(12, 12, 12, 0.95) 30%, rgba(12, 12, 12, 0.5) 70%, transparent);
+            padding: 30px 20px 25px;
+            text-align: center;
+            z-index: 5;
+            transition: background 0.3s ease;
+        }
+
+        .galeria-overlay h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--cor-ouro);
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .galeria-overlay p {
+            font-size: 0.85rem;
+            color: #ffffff;
+            opacity: 0.85;
+            letter-spacing: 1px;
+        }
+.imagem-card{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+        /* Botões de Controlo do Carrossel */
+        .carrossel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(12, 12, 12, 0.7);
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            color: var(--cor-ouro);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .carrossel-btn:hover {
+            background: var(--cor-ouro);
+            color: var(--cor-preto);
+            border-color: var(--cor-ouro);
+        }
+
+        .carrossel-btn.prev {
+            left: 15px;
+        }
+
+        .carrossel-btn.next {
+            right: 15px;
+        }
+
+        /* Exibir as setas ao passar o rato (hover) na imagem */
+        .galeria-item:hover .carrossel-btn {
+            opacity: 1;
+        }
+
+        /* 6. Apresentação dos Barbeiros - Estilo Cartas Expansíveis */
+        .barbeiros-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            height: 500px;
+            margin-top: 40px;
+            transition: all 0.5s ease;
+        }
+
+        .barbeiro-card {
+            flex: 1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            background-color: var(--cor-cinza-escuro);
+        }
+
+        /* Imagem de Fundo da Carta */
+        .barbeiro-img-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.6s ease, filter 0.6s ease;
+            filter: grayscale(40%) brightness(60%);
+        }
+
+        /* Efeito de Expansão Lateral (Desktop) */
+        .barbeiro-card:hover, .barbeiro-card.expandido {
+            flex: 2.5;
+            border-color: var(--cor-ouro);
+            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.2);
+        }
+
+        /* Quando expande, a imagem ganha cores e foco */
+        .barbeiro-card:hover .barbeiro-img-bg, .barbeiro-card.expandido .barbeiro-img-bg {
+            transform: scale(1.05);
+            filter: grayscale(0%) brightness(80%);
+        }
+
+        /* Conteúdo sobreposto na imagem */
+        .barbeiro-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(12, 12, 12, 0.95) 15%, rgba(12, 12, 12, 0.4) 60%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        .barbeiro-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--cor-ouro);
+            margin: 0;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        /* Detalhes ocultos por padrão */
+        .barbeiro-detalhes {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease;
+        }
+
+        .barbeiro-detalhes span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--cor-ouro-brilhante);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 5px 0 12px 0;
+        }
+
+        .barbeiro-detalhes p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--cor-texto);
+            margin: 0;
+        }
+
+        /* Ativação dos detalhes no hover / expandido */
+        .barbeiro-card:hover .barbeiro-detalhes, .barbeiro-card.expandido .barbeiro-detalhes {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+
+        /* Responsividade para Dispositivos Móveis */
+        @media (max-width: 992px) {
+            .barbeiros-container {
+                height: 450px;
+            }
+            .barbeiro-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Transição de comportamento para lista vertical expansível no Mobile */
+            .barbeiros-container {
+                flex-direction: column;
+                height: auto;
+                gap: 15px;
+            }
+            
+            .barbeiro-card {
+                flex: none;
+                width: 100%;
+                height: 110px; /* Altura compacta por padrão para caber todas */
+                transition: height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+
+            /* No mobile, cresce verticalmente ao tocar */
+            .barbeiro-card:hover, .barbeiro-card.expandido {
+                height: 240px;
+                flex: none;
+            }
+
+            .barbeiro-overlay {
+                padding: 20px;
+                background: linear-gradient(to top, rgba(12, 12, 12, 0.95) 35%, rgba(12, 12, 12, 0.5) 75%, transparent 100%);
+            }
+
+            .barbeiro-card h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* 7. Área Especial de Marcações (AppBarber) */
+        .agendamento {
+            background: linear-gradient(rgba(12, 12, 12, 0.9), rgba(12, 12, 12, 0.9)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            padding: 100px 8%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .agendamento-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--cor-cinza-escuro);
+            border: 2px dashed var(--cor-ouro);
+            padding: 60px 40px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .agendamento-container i {
+            font-size: 3.5rem;
+            color: var(--cor-ouro);
+            margin-bottom: 25px;
+        }
+
+        .agendamento-container h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .agendamento-container p {
+            color: var(--cor-subtexto);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #080808;
+            padding: 60px 8% 30px;
+            border-top: 1px solid rgba(197, 168, 128, 0.1);
+        }
+
+        .footer-conteudo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-coluna {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-coluna h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--cor-ouro);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-coluna p {
+            color: var(--cor-subtexto);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .footer-coluna i {
+            color: var(--cor-ouro);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .redes-sociais {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .redes-sociais a {
+            background-color: var(--cor-cinza-medio);
+            color: var(--cor-ouro);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .redes-sociais a:hover {
+            background-color: var(--cor-ouro);
+            color: var(--cor-preto);
+            transform: translateY(-3px);
+        }
+
+        .direitos {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            color: #555555;
+            font-size: 0.8rem;
+        }
+
+        /* Responsividade para manter o site fluído */
+        @media (max-width: 1200px) {
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 em tablets */
+            }
+            .galeria-item {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .secao { padding: 80px 5%; }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            #servicos {
+                padding-top: 30px; /* Ajuste proporcional extra para telas pequenas */
+            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 1rem; }
+            .frase-efeito { font-size: 1rem; }
+            .titulo-secao h2 { font-size: 2rem; }
+            .agendamento-container { padding: 40px 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .galeria-grid {
+                grid-template-columns: 1fr; /* 1 coluna inteira em telemóveis */
+            }
+            .galeria-item {
+                height: 380px;
+            }
+        }
